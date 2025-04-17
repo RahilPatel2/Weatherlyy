@@ -1,0 +1,299 @@
+/* 🌤️ General Styling */
+.weather-container {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #222, #333);
+    color: #fff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    max-width: 460px;
+    margin: 30px auto;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .weather-container::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(135deg, #000, #0887c2, #000);
+    border-radius: 18px;
+    filter: blur(20px);
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+
+  .weather-container:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
+  }
+
+  .weather-container:hover::before {
+    opacity: 0.8;
+  }
+
+  /* 🌟 Heading */
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #d400ff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #d400ff;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+  }
+
+  h1:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 12px #ff00ff;
+  }
+
+  /* 🔍 Search Box */
+  .search-box {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+
+  .search-box input {
+    padding: 12px;
+    width: 58%;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #2a2a2a;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .search-box input:focus {
+    background: #333;
+    outline: 2px solid #74b9ff;
+    box-shadow: 0 0 10px #74b9ff;
+  }
+
+  .search-box button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+  }
+
+  .search-box button:hover {
+    background: #e68900;
+    transform: scale(1.08);
+    box-shadow: 0 0 10px #e68900;
+  }
+
+  /* 🌡️ Weather Info Rows */
+  .info-box {
+    margin-top: 30px;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+  }
+
+  .info-row:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  }
+
+  .info-row svg {
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(0 0 5px #00bcd4);
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .info-row:hover svg {
+    transform: rotate(12deg) scale(1.15);
+    filter: drop-shadow(0 0 15px #ff00ff);
+  }
+
+  /* 🌡️ Temperature Styles */
+  .temp {
+    font-size: 1.8em;
+    font-weight: bold;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+  }
+
+  .temp.hot {
+    color: #ff5733;
+    text-shadow: 0 0 10px #ff5733;
+  }
+
+  .temp.warm {
+    color: #ff9800;
+    text-shadow: 0 0 10px #ff9800;
+  }
+
+  .temp.cool {
+    color: #4caf50;
+    text-shadow: 0 0 10px #4caf50;
+  }
+
+  .temp.cold {
+    color: #00bcd4;
+    text-shadow: 0 0 10px #00bcd4;
+  }
+
+  /* Min & Max Temps */
+  .min-max {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .min-max p {
+    font-size: 1.1em;
+    color: #bbb;
+    transition: all 0.4s ease;
+  }
+
+  .min-max p:hover {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 10px #d400ff;
+  }
+
+  /* 📦 Button Box */
+  .button-box {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .button-box button {
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .button-box button:hover {
+    background: #0097a7;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00bcd4;
+  }
+
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
+    .weather-container {
+      width: 95%;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    .info-row {
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .info-row svg {
+      width: 45px;
+      height: 45px;
+    }
+
+    .min-max {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .weather-container {
+      padding: 25px;
+    }
+
+    h1 {
+      font-size: 1.7em;
+    }
+
+    .info-row {
+      gap: 12px;
+      padding: 12px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .info-row svg {
+      width: 35px;
+      height: 35px;
+    }
+
+    .min-max {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box input {
+      width: 100%;
+    }
+
+    .button-box {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .button-box button {
+      width: 100%;
+    }
+  }
+
+  /* ✨ Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 152, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+    }
+  }

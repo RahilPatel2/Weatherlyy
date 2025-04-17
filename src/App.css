@@ -1,0 +1,319 @@
+/* 🌟 Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🌌 Body Styling */
+body {
+  background: linear-gradient(135deg, #000, #0887c2, #000);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: background 0.5s ease; /* 💡 Smooth transition */
+}
+
+/* 🌟 App Container */
+.app-container {
+  max-width: 1200px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 🔥 Navigation Bar */
+.navbar {
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* 🛠️ Navbar hover effect */
+.navbar:hover {
+  background: #333;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔥 Navbar Links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  color: #ffeb3b;
+  transform: translateY(-3px);
+}
+
+/* ✅ Admin Profile */
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: 0.4s;
+}
+
+.admin-photo:hover {
+  transform: scale(1.1);
+}
+
+.admin-username {
+  font-size: 18px;
+  color: #4caf50;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.admin-username:hover {
+  color: #ff9800;
+}
+
+/* 🌟 Content Section */
+.content {
+  padding: 100px 40px 40px; /* ✅ Added extra padding to avoid navbar overlap */
+}
+
+/* 🌦️ Weather Box */
+.info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #222;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-size: 38px;  /* ✅ Slightly larger for better readability */
+  color: #ffeb3b;
+  text-align: center;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  color: #ccc;
+}
+
+.info-row p {
+  margin: 0;
+}
+
+.info-row span {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.min-max p {
+  margin: 5px 0;
+}
+
+.info-row svg {
+  transition: 0.3s;
+}
+
+.info-row:hover svg {
+  transform: scale(1.3);
+}
+
+/* ✅ Buttons */
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: #45a049;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ✅ Comparison Page Styling */
+.comparison-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  gap: 20px;
+  flex-wrap: wrap; /* 💡 Better layout on smaller screens */
+}
+
+/* ✅ Weather Card */
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 35px;
+  border-radius: 15px;
+  width: 45%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.weather-card h3 {
+  font-size: 26px;
+  color: #ffeb3b;
+  margin-bottom: 15px;
+}
+
+.weather-card p {
+  font-size: 18px;
+  color: #fff;
+  margin: 10px 0;
+}
+
+/* ✅ Loading & Error Messages */
+.loading {
+  font-size: 20px;
+  color: #ffeb3b;
+  margin-top: 15px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+/* 🌟 Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ✅ Compare Button */
+.compare-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.compare-button:hover {
+  background: #45a049;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .content {
+    padding: 80px 20px;
+  }
+
+  .info-box {
+    padding: 30px;
+  }
+
+  .navbar {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .admin-photo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .admin-username {
+    font-size: 16px;
+  }
+
+  .weather-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 60px 15px;
+  }
+
+  .navbar {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .weather-card {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .weather-card p {
+    font-size: 16px;
+  }
+}

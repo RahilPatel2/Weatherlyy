@@ -1,0 +1,193 @@
+/* 🌟 Navbar Container */
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 18px 40px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Add subtle transparency effect on scroll */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* 🌟 Navbar Flex Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* 🔥 Logo Styling */
+.nav-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00d4ff;
+    text-decoration: none;
+    transition: color 0.4s, transform 0.3s;
+}
+
+/* Logo hover effect */
+.nav-logo:hover {
+    color: #ff9800;
+    transform: scale(1.1);
+}
+
+/* 🌐 Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Individual nav link styling */
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 12px 18px;
+    transition: color 0.4s, transform 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+}
+
+/* Active Link Styling */
+.nav-link.active {
+    color: #ff5722;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.5);
+    background: rgba(255, 87, 34, 0.1);
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: #ff9800;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.5);
+}
+
+/* 🔥 User Info Styling */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* User Photo */
+.user-photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #00d4ff;
+    transition: 0.3s;
+}
+
+.user-photo:hover {
+    transform: scale(1.1);
+    border-color: #ff9800;
+}
+
+/* Username Styling */
+.user-info span {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.user-info:hover span {
+    color: #ff9800;
+}
+
+/* 🔥 Logout Button */
+.logout-btn {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.logout-btn:hover {
+    background: #ff0000;
+}
+
+/* 🔥 Toggle Button for Mobile (Hamburger Menu) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.4s, color 0.4s;
+}
+
+/* Toggle hover effect */
+.nav-toggle:hover {
+    color: #ff9800;
+    transform: rotate(90deg);
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 999;
+        padding: 30px;
+        transition: transform 0.5s ease-in-out, opacity 0.5s;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    /* When menu is open */
+    .nav-links.open {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        padding: 15px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .user-photo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .user-info span {
+        font-size: 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}

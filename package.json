@@ -1,5 +1,5 @@
 {
-  "engines" : {
+  "engines": {
     "node": "v20.12.2"
   },
   "name": "rahil",
@@ -33,6 +33,7 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
-    "globals": "^15.9.0"
+    "globals": "^15.9.0",
+    "serve": "^14.2.4"
   }
 }
